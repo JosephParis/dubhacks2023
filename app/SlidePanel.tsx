@@ -1,3 +1,4 @@
+'use client'
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Switch from '@mui/material/Switch';
@@ -17,9 +18,9 @@ export default function SimpleSlide() {
     cardNumber: 0,
     textOne: 'Black Berry',
     textTwo: 'Build Towards the Future Together',
-    imgSrc:'./Images/classroom.png'
+    imgSrc: 'classroom.jpg'
   });
-
+//./Images/classroom.png './Images/classroom.png'
   const handleChange = () => {
     switch(currentCard.cardNumber % 3) {
       case(0):
@@ -27,7 +28,7 @@ export default function SimpleSlide() {
           cardNumber: currentCard.cardNumber + 1,
           textOne: 'Black Berry',
           textTwo: 'Build Towards the Future Together',
-          imgSrc:'./Images/classroom.png'
+          imgSrc: 'classroom.jpg'
         });
         return;
       case(1):
@@ -35,7 +36,7 @@ export default function SimpleSlide() {
           cardNumber: currentCard.cardNumber + 1,
           textOne: 'Connect',
           textTwo: 'Find Students with Similar Interests',
-          imgSrc:'./Images/classroom.png'
+          imgSrc: 'classroom.jpg'
         });
         break;
       case(2):
@@ -43,7 +44,7 @@ export default function SimpleSlide() {
           cardNumber: currentCard.cardNumber + 1,
           textOne: 'Build A Resume',
           textTwo: 'Find Clubs, Projects, and Internships',
-          imgSrc:'./Images/classroom.png'
+          imgSrc:'classroom.jpg'
         });
         break;
       default:
@@ -51,28 +52,23 @@ export default function SimpleSlide() {
           cardNumber: currentCard.cardNumber+1,
           textOne: 'Black Berry',
           textTwo: 'Build Towards the Future Together',
-          imgSrc:'./Images/classroom.png'
+          imgSrc:'classroom.jpg'
         });
         return;
   }}
 
     const MainAreaCard = (
-      <Card sx={{height: '100%', width:'100%',position: 'relative'}}>
+      <div>
+      <Card sx={{height: '100%', width:'100%',position: 'relative'}} style={{background: 'transparent'}}>
         <CardActionArea>
-          <CardMedia
-            component="img"
-            height='500'
-            src={currentCard.imgSrc}
-            alt="other"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div" fontSize='100px'>
-              {currentCard.textOne}
-            </Typography>
-            <Typography variant="body2" color="text.secondary" fontSize='75px'>
-            {currentCard.textTwo}
-            </Typography>
-          </CardContent>
+            <CardContent >
+              <Typography gutterBottom variant="h5" component="div" fontSize='100px' color={'maroon'}>
+                {currentCard.textOne}
+              </Typography>
+              <Typography variant="body2" color="text.secondary" fontSize='75px' color={'maroon'}>
+              {currentCard.textTwo}
+              </Typography>
+            </CardContent>
         </CardActionArea>
         <CardActions>
           <Button size="small" color="primary">
@@ -80,6 +76,7 @@ export default function SimpleSlide() {
           </Button>
         </CardActions>
       </Card>
+      </div>
   )
   return (
     <Box
@@ -92,7 +89,7 @@ export default function SimpleSlide() {
       }}
       
     >
-        <Grid container rowSpacing={1} justifyContent="space-evenly" alignItems="center">
+        <Grid container rowSpacing={1} justifyContent="space-evenly" alignItems="center" >
  
         <Grid item xs textAlign={'center'}>
             <Button
@@ -104,7 +101,7 @@ export default function SimpleSlide() {
             </Button>
         </Grid>
 
-        <Grid item xs={6}>
+        <Grid item xs={6}style={{backgroundImage: 'url("classroom.jpg")', backgroundSize: '100%', backgroundRepeat:'no-repeat'}}>
             <Slide direction="left" in={true} mountOnEnter unmountOnExit>
               {MainAreaCard}
             </Slide>
@@ -124,7 +121,15 @@ export default function SimpleSlide() {
     </Box>
   );
 }
-/*<FormControlLabel
+/*
+<img src='classroom.jpg' min-height={'100%'} min-width={'100%'}  background-size={'cover'}
+    background-repeat={'no-repeat'}/>
+          <CardMedia
+            component="img"
+            src='classroom.jpg'
+            height='500'
+            alt="other"
+            /><FormControlLabel
 control={<Switch checked={checked} onChange={handleChange} />}
 label="Show"            style={{textAlign:"center", top:"50%"}}
 />

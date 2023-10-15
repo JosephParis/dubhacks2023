@@ -6,6 +6,7 @@ import BasicGrid from './BasicGrid'
 export default function Home() {
   return(
   <div style={{backgroundColor: '#91998D'}}>
+  <img src='/static/images/avatar/2.jpg'/>
   <BasicGrid></BasicGrid>
   </div>
   )
