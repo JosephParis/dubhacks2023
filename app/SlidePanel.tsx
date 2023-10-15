@@ -10,7 +10,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions, Hidden } from '@mui/material';
-import { ArrowBack, ArrowForward, TextsmsTwoTone } from '@mui/icons-material';
+import { ArrowBack, ArrowForward, Functions, TextsmsTwoTone } from '@mui/icons-material';
 import Grid from '@mui/material/Grid';
 
 export default function SimpleSlide() {
@@ -62,26 +62,21 @@ export default function SimpleSlide() {
       <Card sx={{height: '100%', width:'100%',position: 'relative'}} style={{background: 'transparent'}}>
         <CardActionArea>
             <CardContent >
-              <Typography gutterBottom variant="h5" component="div" fontSize='100px' color={'maroon'}>
+              <Typography gutterBottom variant="h5" component="div" fontSize='100px' color={'white'}>
                 {currentCard.textOne}
               </Typography>
-              <Typography variant="body2" color="text.secondary" fontSize='75px' color={'maroon'}>
+              <Typography variant="body2" fontSize='75px' color={'white'}>
               {currentCard.textTwo}
               </Typography>
             </CardContent>
         </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-        </CardActions>
       </Card>
       </div>
   )
   return (
     <Box
       sx={{
-        height: 500,
+        height: 448,
         width: '100%',
         position: 'relative',
         zIndex: 1,
@@ -121,38 +116,3 @@ export default function SimpleSlide() {
     </Box>
   );
 }
-/*
-<img src='classroom.jpg' min-height={'100%'} min-width={'100%'}  background-size={'cover'}
-    background-repeat={'no-repeat'}/>
-          <CardMedia
-            component="img"
-            src='classroom.jpg'
-            height='500'
-            alt="other"
-            /><FormControlLabel
-control={<Switch checked={checked} onChange={handleChange} />}
-label="Show"            style={{textAlign:"center", top:"50%"}}
-/>
-       <Grid xs={1}></Grid>
-        <Grid xs={1}>2</Grid>
-        <Grid xs={1}></Grid>
-        <Grid xs={1}>4</Grid>
-        <Grid xs={1}></Grid>
-        <Grid xs={1}>6</Grid>
-        <Grid xs={1}></Grid>
-        <Grid xs={1}>8</Grid>
-        <Grid xs={1}></Grid>
-        <Grid xs={1}>10</Grid>
-        <Grid xs={1}></Grid>
-        <Grid xs={1}>12</Grid>
-        <Grid item xs={6}>
-            <Slide direction="left" in={checked === 1} mountOnEnter unmountOnExit>
-            {MultiActionAreaCard}
-            </Slide>
-            </Grid>
-            <Grid item xs={6}>
-            <Slide direction="left" in={checked === 2 ? Hidden} mountOnEnter unmountOnExit>
-            {MultiActionAreaCard}
-            </Slide>
-            </Grid>
-        */
