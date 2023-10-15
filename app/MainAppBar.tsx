@@ -18,6 +18,7 @@ import { Grid } from '@mui/material';
 import { Basic } from "next/font/google";
 import SimpleSlide from "./SlidePanel";
 import jobData from "./jobData";
+import "./style.css"
 
 const defaultJob = {
     title: 'Job Title',
@@ -40,7 +41,7 @@ const JobListing = ({ job = defaultJob}) => (
 
   const AboutUs = () =>{
     return(
-    <section>
+    <section className='blackText'>
     <h2>About Me</h2>
     <p>
       This is a brief introduction about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -50,7 +51,7 @@ const JobListing = ({ job = defaultJob}) => (
   }
   const Connect = () => { 
     return (
-        <section>
+        <section className='blackText'>
             <h2>Connect</h2>
             <p>
             You can connect with others here!
@@ -60,7 +61,7 @@ const JobListing = ({ job = defaultJob}) => (
   }
   const Contact = () =>{
     return (
-    <section>
+    <section className='blackText'>
         <h2>Contact</h2>
         <p>
         You can contact me at example@example.com.
@@ -71,7 +72,7 @@ const JobListing = ({ job = defaultJob}) => (
 
   const Opportunities = () => {
     return (
-        <div className="App">
+        <div className="App blackText">
           <header>
             <h1>Job Listings</h1>
           </header>
