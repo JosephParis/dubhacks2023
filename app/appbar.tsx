@@ -35,6 +35,40 @@ function MainAppBar() {
     setAnchorElUser(null);
   };
 
+  function Home(){
+
+  }
+  function AboutUs(){
+    
+  }
+  function Connect(){
+    
+  }
+  function Contact(){
+    
+  }
+
+  function buttonClick(key: any){
+    handleCloseNavMenu
+    switch(key){
+        case pages[0]:
+            Home()
+            break;
+        case pages[1]:
+            AboutUs()
+            break;
+        case pages[2]:
+            Connect()
+            break;
+        case pages[3]:
+            Contact()
+            break;
+        default:
+            break;
+
+    }
+  }
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -117,7 +151,7 @@ function MainAppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => buttonClick({page})}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}

@@ -1,12 +1,12 @@
 'use client'
 import Image from 'next/image'
 import MainAppBar from './appbar'
-import SimpleSlide from './BigImage'
+import SimpleSlide from './SlidePanel'
+import BasicGrid from './BasicGrid'
 export default function Home() {
   return(
-  <div>
-  <MainAppBar></MainAppBar>
-  <SimpleSlide></SimpleSlide>
+  <div style={{backgroundColor: '#91998D'}}>
+  <BasicGrid></BasicGrid>
   </div>
   )
   /*return (
